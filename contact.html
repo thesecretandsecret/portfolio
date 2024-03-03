@@ -1,0 +1,203 @@
+<?php
+include "form.php";
+?>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Contact</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+header a:hover {
+  color: #ddd;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #ddd;
+}
+
+.container-fluid {
+  padding: 0 15px;
+}
+
+.social-icons {
+  text-align: center;
+  padding: 10px;
+}
+
+.social-icons a {
+  color: #333;
+  margin: 0 10px;
+  font-size: 24px;
+}
+
+.social-icons a:hover {
+  color: #ddd;
+}
+
+#contact {
+  padding: 50px 0;
+}
+
+#contact h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+}
+
+.left-side, .right-side {
+  width: 45%;
+}
+
+.details {
+  margin-bottom: 30px;
+}
+
+.topic {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.text-one, .text-two {
+  margin-bottom: 10px;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input-box {
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #555;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+  </style>
+</head>
+<body>
+
+
+
+<section id="contact">
+    <h1>Contact Me</h1>
+    <div class="content">
+        <div class="left-side">
+          <div class="address details">
+              <i class="fas fa-map-marker-alt"></i>
+              <div class="topic">Address</div>
+          <div class="text-one">No-14,Main Street</div>
+        <div class="text-two">Ampara 06</div>
+          </div>
+<div class="phone details">
+              <i class="fas fa-phone-alt"></i>
+          <div class="topic">Phone</div>
+              <div class="text-one">0762392929</div>
+              <div class="text-two">0672233999</div>
+        </div>
+          <div class="email details">
+          <i class="fas fa-envelope"></i>
+            <div class="topic">Email</div>
+            <div class="text-one">mediahome@gmail.com</div>
+            <div class="text-two">mediahomehiba@gmail.com</div>
+          </div>
+        </div>
+          <div class="right-side">
+            <div class="topic-text">Send me a message</div>
+            <p>This is one of the most easiest way to find a mentor like me for your kids, you can send me message from here. It's my pleasure to help you.</p>
+        <form action="form.php" id="form" method="POST">
+          <div class="input-box">
+              <input type="text" placeholder="Enter your name" id="name" name="name" required>
+    <div id="nameError" class="error-message">
+      <?php
+      echo $nameErr;
+      ?>
+    </div>
+          </div>
+  <div class="input-box">
+    <input type="text" placeholder="Enter your email" id="email" name="email" required>
+    <div id="emailError" class="error-message">
+    <?php
+      echo $emailErr;
+      ?>
+    </div>
+          </div> 
+          <div class="input-box">
+    <input type="text" placeholder="Enter your message" id="message" name="message" required>
+    <div id="emailError" class="error-message">
+    <?php
+      echo $messageErr;
+      ?>
+    </div>
+          </div>  
+  <button type="submit" >Send</button>
+           
+        </form>
+      </div>
+
+</section>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Leave a Review</title>
+    </head>
+    
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input[type="text"], textarea {
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+}
+
+select {
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+  
+	<h1>Leave a Review</h1>
+	<form action="submit_review.php" method="post">
+		<label for="name">Name:</label><br>
+		<input type="text" id="name" name="name" required><br>
+		<label for="rating">Rating (1-5):</label><br>
+		<select id="rating" name="rating" required>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select><br>
+		<label for="review">Review:</label><br>
+		<textarea id="review" name="review" rows="4" cols="50" required></textarea><br>
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>
